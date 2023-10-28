@@ -35,7 +35,7 @@ public class LinkedBinaryTree<E, T> implements BinaryTreeInterface<T>{
         return null;
     }
 
-    public Node <E> addLeft(Node p, E element) {
+    public Node<E> addLeft(Node p, E element) {
         // Add element to the left child node of p if empty
         Node<E> parent = (Node<E>) p;
         if (parent.left == null) {
@@ -47,7 +47,7 @@ public class LinkedBinaryTree<E, T> implements BinaryTreeInterface<T>{
         return null;
     }
 
-    public Node <E> addRight(Node p, E element) {
+    public Node<E> addRight(Node p, E element) {
         // Add element to the right child node of p if empty
         Node<E> parent = (Node<E>) p;
         if (parent.right == null) {
@@ -130,4 +130,32 @@ public class LinkedBinaryTree<E, T> implements BinaryTreeInterface<T>{
         return null;
     }
     
+    @Override
+    public String toString() {
+        printHorizontally(root, 0);
+        return "";
+    }
+    
+    static final int COUNT = 10;
+    static void printHorizontally(Node root, int space) {
+        // Base case
+        if (root == null)
+            return;
+ 
+        // Increase distance between levels
+        space += COUNT;
+ 
+        // Process right child first
+        printHorizontally(root.right, space);
+ 
+        // Print current node after space
+        // count
+        System.out.print("\n");
+        for (int i = COUNT; i < space; i++)
+            System.out.print(" ");
+        System.out.print(root.element + "\n");
+ 
+        // Process left child
+        printHorizontally(root.left, space);
+    }
 }

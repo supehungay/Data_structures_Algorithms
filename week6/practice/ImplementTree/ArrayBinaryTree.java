@@ -21,20 +21,20 @@ public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
         }
     }   
 
-    public void setLeft ( int p , E element ) {
+    public void setLeft (int p , E element) {
         // Set left child of p (at index 2p)
         int leftChildIdx = 2 * p;
-        if (leftChildIdx <= n) {
+        if (n >= 1) {
             array[leftChildIdx] = element;
             n++;
         } else {
             System.out.println("Parent node does not exist or left child already occupied.");
         }
     }
-    public void setRight ( int p , E element ) {
+    public void setRight (int p , E element) {
         // Set right child of p (at index 2p+1)
         int rightChildIdx = 2 * p + 1;
-        if (rightChildIdx <= n) {
+        if (n >= 1) {
             array[rightChildIdx] = element;
             n++;
         } else {
@@ -43,7 +43,7 @@ public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
     }
 
     @Override
-    public T root() {
+    public T root() { // Trả về vị trí của root
         if (!isEmpty()) {
             return (T) Integer.valueOf(1);
         }
@@ -61,23 +61,29 @@ public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
     }
 
     @Override
-    public int numChildren(T p) {
-        int position = (int) p;        
-        int leftChildIdx = 2 * position;
-        int rightChildIdx = 2 * position + 1;
-        int numChildren = 0;
+    public int numChildren(T p) { // Trả về số lượng con của node có vị trí p
+        if (p instanceof Integer) { // Kiem tra xem chac chan p co phai kieu Integer khong
+            Integer type_casting = (Integer) p;
+            int position = type_casting.intValue();
+            int leftChildIdx = 2 * position;
+            int rightChildIdx = 2 * position + 1;
+            int numChildren = 0;
 
-        if (leftChildIdx <= n); 
-            numChildren++;
-        if (rightChildIdx <= n);
-            numChildren++;
+            if (leftChildIdx <= n); 
+                numChildren++;
+            if (rightChildIdx <= n);
+                numChildren++;
 
-        return numChildren;
+            return numChildren;
+        } else {
+            return -1;
+        }
     }
 
     @Override
     public T parent(T p) {
-        int position = (int) p;
+        Integer type_casting = (Integer) p;
+        int position = type_casting.intValue();
         if (position != 1 && position <= n)         
             return (T) Integer.valueOf(position / 2);
         return null;        
@@ -85,7 +91,8 @@ public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
 
     @Override
     public T left(T p) {
-        int position = (int) p;
+        Integer type_casting = (Integer) p;
+        int position = type_casting.intValue();
         int leftChildIdx = 2 * position;
         if (leftChildIdx <= n)
             return (T) Integer.valueOf(leftChildIdx);
@@ -94,7 +101,8 @@ public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
     }
     @Override
     public T right(T p) {
-        int position = (int) p;
+        Integer type_casting = (Integer) p;
+        int position = type_casting.intValue();
         int rightChildIdx = 2 * position + 1;
         if (rightChildIdx <= n)
             return (T) Integer.valueOf(rightChildIdx);
@@ -104,7 +112,8 @@ public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
 
     @Override
     public T sibling(T p) {
-       int position = (int) p;
+       Integer type_casting = (Integer) p;
+        int position = type_casting.intValue();
         if (position == 1 || position > n) {
             return null; // No sibling for root or invalid position
         }
@@ -115,5 +124,32 @@ public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
             return (T) Integer.valueOf(position - 1);
         }
     }
-    
+
+    @Override
+    public String toString() {
+        // for (int i = 1; i <= n; i++) {
+        //     System.out.println(array[i]);
+        // }
+        printHorizontally(array, 1, 0);
+        return "";
+    }
+
+    static final int COUNT = 10;
+
+    void printHorizontally(E[] array, int index, int space) {
+        if (index < array.length && array[index] != null) {
+            space += COUNT;
+
+            printHorizontally(array, 2 * index + 1, space);
+
+            System.out.print("\n");
+            for (int i = COUNT; i < space; i++)
+                System.out.print(" ");
+
+            // System.out.println(index);
+            System.out.print(array[index] + "\n");
+
+            printHorizontally(array, 2 * index, space);
+        }
+    }
 }
