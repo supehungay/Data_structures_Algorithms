@@ -1,4 +1,4 @@
-package week6.practice.ImplementTree;
+package week6.practice.exercise1;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -21,7 +21,7 @@ public class BinaryTreeMain {
         System.out.printf("%s Array Binary Tree %s%n", "=".repeat(20), "=".repeat(20));
         System.out.println(arrayTree);
 
-        // Tạo cau nhi phan su dung LinkedBinaryTree
+        // Tao cau nhi phan su dung LinkedBinaryTree
         LinkedBinaryTree<Integer, LinkedBinaryTree.Node<Integer>> linkedTree = new LinkedBinaryTree<>();
         LinkedBinaryTree.Node<Integer> root = linkedTree.addRoot(1);
         LinkedBinaryTree.Node<Integer> node2 = linkedTree.addLeft(root, 2);

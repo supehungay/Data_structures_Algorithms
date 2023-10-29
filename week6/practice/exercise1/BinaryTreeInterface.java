@@ -1,4 +1,4 @@
-package week6.practice.ImplementTree;
+package week6.practice.exercise1;
 
 public interface BinaryTreeInterface<T> {
     T root();

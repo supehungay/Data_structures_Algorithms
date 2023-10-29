@@ -1,4 +1,4 @@
-package week6.practice.ImplementTree;
+package week6.practice.exercise1;
 
 public class ArrayBinaryTree<E, T> implements BinaryTreeInterface<T> {
 

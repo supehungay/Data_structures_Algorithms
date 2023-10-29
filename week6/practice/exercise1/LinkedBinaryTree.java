@@ -1,4 +1,6 @@
-package week6.practice.ImplementTree;
+package week6.practice.exercise1;
+
+import org.w3c.dom.Node;
 
 public class LinkedBinaryTree<E, T> implements BinaryTreeInterface<T>{
 
@@ -15,6 +17,35 @@ public class LinkedBinaryTree<E, T> implements BinaryTreeInterface<T>{
             left = leftChild;
             right = rightChild;
         }
+
+        public E getElement() {
+            return element;
+        }
+
+        public Node<E> getParent() {
+            return parent;
+        }
+
+        public Node<E> getLeft() {
+            return left;
+        }
+
+        public Node<E> getRight() {
+            return right;
+        }
+
+        public void setElement(E element) {
+            this.element = element;
+        }
+
+        public void setLeft(Node<E> node) {
+            left = node;
+        }
+
+        public void setRight(Node<E> node) {
+            right = node;
+        }
+
     }
 
     private Node<E> root;
