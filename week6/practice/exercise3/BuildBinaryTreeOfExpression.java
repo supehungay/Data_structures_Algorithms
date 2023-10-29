@@ -2,9 +2,6 @@ package week6.practice.exercise3;
 
 import java.util.ArrayList;
 import java.util.Stack;
-
-import org.w3c.dom.Node;
-
 import week6.practice.exercise1.LinkedBinaryTree;
 
 public class BuildBinaryTreeOfExpression<E, T> extends LinkedBinaryTree<E, T> {

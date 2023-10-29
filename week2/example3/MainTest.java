@@ -1,9 +1,5 @@
 import java.util.Scanner;
-
 public class MainTest {
-
-	
-		
 	public static void main(String[] args) {
 		SimpleLinkedList<WordCount> wl = new SimpleLinkedList<WordCount>();
 		Scanner reader = new Scanner(System.in);

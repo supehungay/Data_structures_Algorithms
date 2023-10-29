@@ -1,4 +1,3 @@
-
 public interface ListInterface<T> extends Iterable<T>{
 
 	public void add(T data);

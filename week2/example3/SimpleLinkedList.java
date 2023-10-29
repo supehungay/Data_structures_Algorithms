@@ -114,7 +114,6 @@ public class SimpleLinkedList<T> implements ListInterface<T> {
 		// TODO Auto-generated method stub
 		return new LinkedListIterator();
 	}
-	
 	class LinkedListIterator implements Iterator<T>{
 	
 	    Node currNode = top;
