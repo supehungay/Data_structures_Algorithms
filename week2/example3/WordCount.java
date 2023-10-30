@@ -1,5 +1,3 @@
-
-
 public class WordCount {
 	private String word;
 	private int count;
@@ -15,7 +13,6 @@ public class WordCount {
 		word =w;
 		count = c;
 	}
-	
 	
 	public int getCount()
 	{
@@ -56,9 +53,7 @@ public class WordCount {
 			else
 				return false;
 		}
-		
 		return false;
 	}
-	
 }
 	 	  	   	 	    	   	  	 	
