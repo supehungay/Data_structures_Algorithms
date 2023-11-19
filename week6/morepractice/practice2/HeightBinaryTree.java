@@ -17,7 +17,7 @@ public class HeightBinaryTree {
         }    
     }
 
-    private Node root;
+    // private Node root;
 
     private int findHeight(Node node) {
         if (node == null) {
