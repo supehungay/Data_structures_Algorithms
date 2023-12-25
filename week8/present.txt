@@ -1,0 +1,48 @@
+# Combo 2: Bài 4 và tự chọn 2 bài trong phần Luyện tập thêm, tuy nhiên không chọn các bài bổ trợ cho bài tập 4.
+
+# Giới Thiệu:
+Bài tập thực hiện một loạt các thuật toán trên đồ thị, bao gồm duyệt đồ thị DFS và BFS, tìm đường đi ngắn nhất theo thuật toán Dijkstra, đường đi và chu trình Hamilton, đường đi và chu trình Euler, cây bao trùm tối thiểu, và tô màu đồ thị cùng sắc số của đồ thị.
+
+# Thư Viện và Ngôn Ngữ:
+- Ngôn Ngữ Lập Trình: Java
+- Thư Viện: Không sử dụng thư viện ngoại trừ thư viện chuẩn của Java.
+
+
+# Bài tập 4. (Graph Algorithms) Viết chương trình thực hiện các thuật toán trên đồ thị.
+*Các Phương Thức Chính nằm trong các class tương ứng với yêu cầu đề bài:
+- DFS và BFS:
+    + dfs(int startV): Thực hiện duyệt đồ thị theo thuật toán DFS.
+    + bfs(int startV): Thực hiện duyệt đồ thị theo thuật toán BFS.
+
+- Dijkstra:
+    + dijkstra(int source, int target): Tìm đường đi ngắn nhất từ đỉnh source đến đỉnh target trên đồ thị có trọng số.
+
+- Hamilton và Euler:
+    + hamiltonian(): Tìm chu trình Hamilton trên đồ thị.
+    + eulerian(): Tìm chu trình Euler trên đồ thị.
+
+- Cây Bao Trùm Tối Thiểu:
+    + primMST(int graph[][]): Tìm cây bao trùm tối thiểu trên đồ thị có trọng số.
+
+- Tô Màu Đồ Thị và Sắc Số:
+    + graphColoring(): Tô màu đồ thị và tính sắc số của đồ thị.
+
+# Luyện tập thêm
+1. Danh Sách Kề của Đồ Thị - Print Adjacency List
+- class printAdjacencyList.java: In ra danh sách liền kề của mỗi đỉnh trong đồ thị.
+
+2. Tạo Bản Sao Của Đồ Thị - Clone Graph
+- class cloneGraph.java: Tạo bản sao của đồ thị hiện tại.
+
+# Input và Output:
+- Input: Thông tin về đồ thị được tạo ngẫu nhiên hoặc đã được tạo sẵn ở hàm main tưởng ứng để thuận tiện test.
+- Output: Kết quả của mỗi thuật toán, bao gồm đường đi, chu trình, cây bao trùm, kết quả tô màu và sắc số của đồ thị và Luyện tập 1, 2.
+
+
+# Hệ Thống Yêu Cầu:
+- Ngôn Ngữ Lập Trình Java:
+- Version: Java 8 trở lên.
+- Môi Trường Chạy: Java Virtual Machine (JVM): Đảm bảo máy tính có JVM để chạy chương trình Java.
+
+# Tài Liệu Tham Khảo:
+-  Bài giảng thầy Duc Minh Vu
